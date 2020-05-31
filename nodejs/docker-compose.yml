@@ -1,0 +1,21 @@
+# docker-compose.yml
+version: "3"
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: user
+      POSTGRES_DB: api_boilerplate
+    ports:
+      - "6666:6666"
+
+  api:
+    build: .
+    environment:
+      NODE_ENV: docker
+    depends_on:
+      - db
+    ports:
+      - "3333:3333"
