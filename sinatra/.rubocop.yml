@@ -1,0 +1,6 @@
+Style/Documentation:
+  Enabled: false
+Style/GuardClause:
+  Enabled: false
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context']
